@@ -1,0 +1,75 @@
+.container {
+  margin-top: 24px;
+}
+
+.title {
+  color: #232946;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.menu {
+  margin-left: 0;
+  background: var(--md-surface);
+  border-radius: 12px;
+  box-shadow: var(--md-shadow);
+  padding: 16px 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+  transition: box-shadow 0.2s;
+}
+
+.menu :global(ul) {
+  margin-left: 20px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.menu :global(li) {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: rgba(238, 187, 195, 0.07);
+  transition: background 0.2s;
+}
+
+.image {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.icon {
+  margin-right: 4px;
+  color: #eebbc3;
+  font-size: 18px;
+}
+
+.link {
+  margin-right: 4px;
+  color: #232946;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1.5px solid #eebbc3;
+  transition: color 0.2s, border 0.2s;
+}
+
+.link.hovered {
+  color: #eebbc3;
+  border-bottom: 1.5px solid #232946;
+}
+
+.text {
+  margin-right: 4px;
+  color: #232946;
+  font-weight: 500;
+}

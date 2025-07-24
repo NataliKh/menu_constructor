@@ -1,0 +1,14 @@
+.toastContainer {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.toastItem {
+  pointer-events: auto;
+}

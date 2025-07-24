@@ -1,0 +1,14 @@
+<svg width="420" height="220" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="420" height="220" rx="18" fill="#fafbfc"/>
+<text x="20" y="38" font-size="18" font-family="monospace" fill="#232946">[</text>
+<rect x="36" y="24" width="340" height="160" rx="10" fill="#fff" stroke="#eebbc3" stroke-width="2"/>
+<text x="52" y="52" font-size="15" font-family="monospace" fill="#b59f00">{</text>
+<text x="72" y="72" font-size="14" font-family="monospace" fill="#232946">"id": <tspan fill="#e63946">"1-parent"</tspan>,</text>
+<text x="72" y="92" font-size="14" font-family="monospace" fill="#232946">"text": <tspan fill="#e63946">"Плиты"</tspan>,</text>
+<text x="72" y="112" font-size="14" font-family="monospace" fill="#232946">"uri": <tspan fill="#e63946">"plity/"</tspan>,</text>
+<text x="72" y="132" font-size="14" font-family="monospace" fill="#232946">"SVG": <tspan fill="#e63946">"default"</tspan>,</text>
+<text x="72" y="152" font-size="14" font-family="monospace" fill="#232946">"children": [ ... ]</text>
+<text x="52" y="172" font-size="15" font-family="monospace" fill="#b59f00">}</text>
+<text x="36" y="200" font-size="18" font-family="monospace" fill="#232946">]</text>
+<text x="200" y="210" font-size="12" font-family="monospace" fill="#aaa">Пример структуры JSON-меню</text>
+</svg> 

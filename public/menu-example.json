@@ -1,0 +1,36 @@
+[
+  {
+    "id": "1-parent",
+    "text": "Дорожные и аэродромные плиты",
+    "uri": "plity/",
+    "image": "",
+    "icon": "",
+    "SVG": "perekrytiya",
+    "children": [
+      { "id": "1-child", "text": "1П30-18-30", "uri": "/dorozhnaya-plita-1p30-18-30" },
+      { "id": "2-child", "text": "2П30-18-30", "uri": "/dorozhnaya-plita-2p30-18-30" },
+      { "id": "3-child", "text": "ПДН-14", "uri": "/pdn-14" },
+      { "id": "4-child", "text": "ПАГ-14", "uri": "/aerodromnye-plity-pag-14" },
+      { "id": "5-child", "text": "ПАГ-16", "uri": "/pag-18" },
+      { "id": "6-child", "text": "ПАГ-18", "uri": "/pag-18" },
+      { "id": "7-child", "text": "ПАГ-20", "uri": "/pag-20" }
+    ]
+  },
+  {
+    "id": "8-parent",
+    "text": "Плиты перекрытия",
+    "uri": "plityi-perekryitiya/",
+    "image": "",
+    "icon": "",
+    "SVG": "default",
+    "children": [
+      { "id": "8-child", "text": "Безопалубочные плиты перекрытия ПБ", "uri": "bezopalubochnye-plity-perekrytiya-pb/" },
+      { "id": "9-child", "text": "Плиты перекрытия облегченные ПНО", "uri": "plity-perekrytiya-oblegchennye-pno/" },
+      { "id": "10-child", "text": "Плиты перекрытия пустотные ПК", "uri": "plity-perekrytiya-pustotnye-pk/" },
+      { "id": "11-child", "text": "Ребристые плиты перекрытия", "uri": "rebristyie-plityi-perekryitiya/" },
+      { "id": "12-child", "text": "Плиты перекрытия БПР", "uri": "plity-perekrytiya-bpr/" },
+      { "id": "13-child", "text": "Плиты перекрытия лотков", "uri": "plity-perekrytiya-lotkov" },
+      { "id": "14-child", "text": "Плиты перекрытия БПК", "uri": "plity-perekrytiya-bpk" }
+    ]
+  }
+] 

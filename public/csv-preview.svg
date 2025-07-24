@@ -1,0 +1,9 @@
+<svg width="420" height="160" viewBox="0 0 420 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="420" height="160" rx="18" fill="#fafbfc"/>
+<rect x="36" y="24" width="340" height="100" rx="10" fill="#fff" stroke="#eebbc3" stroke-width="2"/>
+<text x="52" y="48" font-size="15" font-family="monospace" fill="#b59f00">text,uri,SVG,text2,uri2,text3,uri3</text>
+<text x="52" y="68" font-size="14" font-family="monospace" fill="#232946">Плиты,plity/,default,,,,</text>
+<text x="52" y="88" font-size="14" font-family="monospace" fill="#232946">,1П30-18-30,/dorozhnaya-plita-1p30-18-30,,,,</text>
+<text x="52" y="108" font-size="14" font-family="monospace" fill="#232946">,Трубы,/truby/,SVG,Труба асбестоцементная,/asbestovyie-trubyi,</text>
+<text x="210" y="140" font-size="12" font-family="monospace" fill="#aaa">Пример структуры CSV-меню</text>
+</svg> 

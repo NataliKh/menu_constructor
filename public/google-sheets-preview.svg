@@ -1,0 +1,18 @@
+<svg width="370" height="120" viewBox="0 0 370 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="370" height="120" rx="14" fill="#fafbfc"/>
+  <rect x="20" y="24" width="330" height="64" rx="8" fill="#fff" stroke="#b59f00" stroke-width="2"/>
+  <rect x="20" y="24" width="330" height="22" rx="8" fill="#f7f7e0"/>
+  <text x="32" y="40" font-size="13" font-family="monospace" fill="#b59f00">Родительская категория</text>
+  <text x="172" y="40" font-size="13" font-family="monospace" fill="#b59f00">Дочерний</text>
+  <text x="272" y="40" font-size="13" font-family="monospace" fill="#b59f00">URI</text>
+  <text x="32" y="60" font-size="13" font-family="monospace" fill="#232946">Дорожные и аэродромные плиты</text>
+  <text x="172" y="60" font-size="13" font-family="monospace" fill="#232946">1П30-18-30</text>
+  <text x="272" y="60" font-size="13" font-family="monospace" fill="#232946">/dorozhnaya-plita-1p30-18-30</text>
+  <text x="32" y="76" font-size="13" font-family="monospace" fill="#232946">plity/</text>
+  <text x="172" y="76" font-size="13" font-family="monospace" fill="#232946">2П30-18-30</text>
+  <text x="272" y="76" font-size="13" font-family="monospace" fill="#232946">/dorozhnaya-plita-2p30-18-30</text>
+  <text x="32" y="92" font-size="13" font-family="monospace" fill="#232946"></text>
+  <text x="172" y="92" font-size="13" font-family="monospace" fill="#232946">ПДН-14</text>
+  <text x="272" y="92" font-size="13" font-family="monospace" fill="#232946">/pdn-14</text>
+  <text x="60" y="112" font-size="12" font-family="monospace" fill="#aaa">Пример Google Sheets для импорта</text>
+</svg> 
