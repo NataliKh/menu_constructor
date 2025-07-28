@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# Конструктор Меню
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Конструктор Меню** — это веб-приложение на React + TypeScript, предназначенное для визуального создания, редактирования и экспорта многоуровневых меню. Приложение поддерживает импорт из Google Sheets, CSV и JSON, а также экспорт в JSON и PHP (HTML-структура).
 
-Currently, two official plugins are available:
+## Основные возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Визуальное редактирование меню**: создание, удаление, редактирование и перемещение пунктов меню с поддержкой вложенности (drag&drop).
+- **Импорт меню**:
+  - Из Google Sheets (автоматическая конвертация ссылки в CSV).
+  - Из CSV-файлов.
+  - Из JSON-файлов (поддержка вложенных структур).
+- **Экспорт меню**:
+  - В формате JSON.
+  - В виде PHP-файла с HTML-структурой меню (настраиваемые шаблоны).
+- **Работа с несколькими меню**: создание, сохранение, удаление и выбор различных меню.
+- **Шаблоны экспорта**: поддержка пользовательских шаблонов для PHP-экспорта.
+- **Массовое редактирование**: выделение нескольких пунктов для одновременного изменения или удаления.
+- **Фильтрация и поиск**: фильтрация пунктов по наличию детей, иконок и др.
+- **Локальное хранение**: все данные и шаблоны сохраняются в localStorage браузера.
 
-## Expanding the ESLint configuration
+## Быстрый старт
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Установите зависимости:
+   ```bash
+   npm install
+   ```
+2. Запустите проект:
+   ```bash
+   npm run dev
+   ```
+3. Откройте [http://localhost:5173](http://localhost:5173) в браузере.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
+## Структура меню (пример)
+
+```json
+[
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+    "id": "1-parent",
+    "text": "Дорожные и аэродромные плиты",
+    "uri": "plity/",
+    "children": [
+      { "id": "1-child", "text": "1П30-18-30", "uri": "/dorozhnaya-plita-1p30-18-30" },
+      { "id": "2-child", "text": "2П30-18-30", "uri": "/dorozhnaya-plita-2p30-18-30" }
+    ]
+  }
+]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Описание интерфейса
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Редактор меню**: позволяет добавлять, удалять, редактировать и перемещать пункты меню, а также управлять их вложенностью.
+- **Импорт**: поддерживает загрузку меню из Google Sheets (по ссылке), CSV и JSON. Для Google Sheets достаточно вставить ссылку на таблицу, доступную для всех.
+- **Экспорт**: позволяет скачать меню в формате JSON или сгенерировать PHP-файл с HTML-структурой меню. Поддерживаются пользовательские шаблоны.
+- **Список меню**: можно создавать несколько меню, переключаться между ними, переименовывать и удалять.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Основные компоненты
+
+- `MenuConstructor` — основной компонент, объединяющий редактор, импорт и экспорт меню.
+- `MenuEditor` — визуальный редактор структуры меню с drag&drop, фильтрацией и массовым редактированием.
+- `GoogleSheetsImport` — компонент для импорта меню из Google Sheets, CSV и JSON.
+- `MenuPreview` — предпросмотр меню.
+- `ToastContainer` — уведомления об операциях.
+
+## Экспорт меню
+
+- **JSON**: сохраняет структуру меню в виде массива объектов.
+- **PHP**: генерирует PHP-файл с HTML-структурой меню. Можно использовать собственные шаблоны для кастомизации вывода.
+
+## Импорт меню
+
+- **Google Sheets**: вставьте ссылку на таблицу, где первая строка — заголовки, остальные — данные. Пример структуры и шаблон доступны в интерфейсе.
+- **CSV**: загрузите файл с аналогичной структурой.
+- **JSON**: загрузите файл, соответствующий примеру выше.
+
+## Лицензия
+
+MIT License © 2025 Khudyakova Natali
+
+---
