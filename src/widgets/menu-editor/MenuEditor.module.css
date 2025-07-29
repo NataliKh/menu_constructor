@@ -87,14 +87,7 @@
   color: var(--color-text);
   box-shadow: 0 2px 8px #eebbc355;
 }
-.treeBtn:last-child {
-  color: #fff;
-  background: #ffcdd2;
-}
-.treeBtn:last-child:hover {
-  background: #e63946;
-  color: #fff;
-}
+
 .treeItemLabel {
   flex: 1;
   user-select: none;
@@ -103,7 +96,7 @@
   transition: color 0.18s;
 }
 .treeItemLabel:hover {
-  color: #e63946;
+  color: var(--color-text);
 }
 
 .treeArrow,
@@ -261,7 +254,7 @@
   text-decoration: underline;
   background: none;
   border: none;
-  padding: 0;
+  padding: 5px;
   margin-top: 2px;
   margin-bottom: 2px;
   align-self: flex-start;
@@ -425,4 +418,44 @@
   margin-left: 1px;
   margin-right: 1px;
   padding: 0;
+}
+
+.expandAllBtn {
+  background: #fff;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  box-shadow: none;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0;
+}
+.expandAllBtn:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.expandAllLink {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.expandAllLink:hover {
+  color: #1565c0;
+  text-decoration: underline;
 }

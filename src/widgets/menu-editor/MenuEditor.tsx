@@ -30,10 +30,10 @@ export const MenuEditor: React.FC<MenuEditorProps> = ({ value, onChange }) => {
   const [showFilters, setShowFilters] = useState(false);
 
   // Сброс раскрытия веток при смене меню
-  useEffect(() => {
-    setOpenMap({});
-    setSelectedIds([]);
-  }, [value]);
+  // useEffect(() => {
+  //   setOpenMap({});
+  //   setSelectedIds([]);
+  // }, [value]);
 
   const handleToggle = (id: string) => {
     setOpenMap((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -110,6 +110,8 @@ export const MenuEditor: React.FC<MenuEditorProps> = ({ value, onChange }) => {
     };
     if (!parentId) {
       onChange([...value, newItem]);
+      setOpenMap((prev) => ({ ...prev, [newItem.id]: true }));
+      setSelectedId(newItem.id);
     } else {
       const addToTree = (items: MenuItem[]): MenuItem[] =>
         items.map((item) =>
@@ -121,6 +123,8 @@ export const MenuEditor: React.FC<MenuEditorProps> = ({ value, onChange }) => {
               }
         );
       onChange(addToTree(value));
+      setOpenMap((prev) => ({ ...prev, [parentId]: true }));
+      setSelectedId(newItem.id);
     }
   };
 
@@ -273,6 +277,48 @@ export const MenuEditor: React.FC<MenuEditorProps> = ({ value, onChange }) => {
     };
   }
 
+  const handleExpandAll = () => {
+    // Рекурсивно собрать все id пунктов меню
+    function collectIds(items: MenuItem[]): string[] {
+      return items.reduce<string[]>((acc, item) => {
+        acc.push(item.id);
+        if (item.children) acc.push(...collectIds(item.children));
+        return acc;
+      }, []);
+    }
+    const allIds = collectIds(value);
+    const map: Record<string, boolean> = {};
+    allIds.forEach((id) => (map[id] = true));
+    setOpenMap(map);
+  };
+
+  const handleCollapseAll = () => {
+    setOpenMap({});
+  };
+
+  // Определяем, все ли ветки раскрыты
+  const allIds = (() => {
+    function collectIds(items: MenuItem[]): string[] {
+      return items.reduce<string[]>((acc, item) => {
+        acc.push(item.id);
+        if (item.children) acc.push(...collectIds(item.children));
+        return acc;
+      }, []);
+    }
+    return collectIds(value);
+  })();
+  const allOpen = allIds.length > 0 && allIds.every((id) => openMap[id]);
+
+  const handleToggleAll = () => {
+    if (allOpen) {
+      setOpenMap({});
+    } else {
+      const map: Record<string, boolean> = {};
+      allIds.forEach((id) => (map[id] = true));
+      setOpenMap(map);
+    }
+  };
+
   return (
     <div className={styles.editorRow}>
       <div className={styles.tree}>
@@ -321,13 +367,22 @@ export const MenuEditor: React.FC<MenuEditorProps> = ({ value, onChange }) => {
               Сбросить
             </button>
           </div>
-          <button
-            className={styles.filterToggle}
-            type="button"
-            onClick={() => setShowFilters((v) => !v)}
-          >
-            {showFilters ? "Скрыть доп. фильтры" : "Доп. фильтры"}
-          </button>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, margin: '8px 0' }}>
+            <button
+              type="button"
+              className={styles.expandAllLink}
+              onClick={handleToggleAll}
+            >
+              {allOpen ? 'Скрыть все' : 'Раскрыть все'}
+            </button>
+            <button
+              className={styles.filterToggle}
+              type="button"
+              onClick={() => setShowFilters((v) => !v)}
+            >
+              {showFilters ? "Скрыть доп. фильтры" : "Доп. фильтры"}
+            </button>
+          </div>
           {showFilters && (
             <div className={styles.filterCheckboxes}>
               <label>

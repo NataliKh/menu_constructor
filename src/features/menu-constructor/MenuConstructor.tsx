@@ -432,55 +432,63 @@ export const MenuConstructor: React.FC = () => {
                 {menuList.map((m) => (
                   <li key={m.id} className={styles.menuItem}>
                     {editingMenuId === m.id ? (
-                      <input
-                        type="text"
-                        value={editingMenuName}
-                        autoFocus
-                        onChange={(e) => setEditingMenuName(e.target.value)}
-                        onBlur={() => {
-                          handleMenuNameChange(
-                            m.id,
-                            editingMenuName.trim() || m.name
-                          );
-                          setEditingMenuId(null);
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") {
+                      <div style={{ position: 'relative', width: '100%' }}>
+                        <input
+                          type="text"
+                          value={editingMenuName}
+                          autoFocus
+                          onChange={(e) => setEditingMenuName(e.target.value)}
+                          onBlur={() => {
                             handleMenuNameChange(
                               m.id,
                               editingMenuName.trim() || m.name
                             );
                             setEditingMenuId(null);
-                          } else if (e.key === "Escape") {
-                            setEditingMenuId(null);
-                          }
-                        }}
-                        className={styles.input}
-                      />
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              handleMenuNameChange(
+                                m.id,
+                                editingMenuName.trim() || m.name
+                              );
+                              setEditingMenuId(null);
+                            } else if (e.key === "Escape") {
+                              setEditingMenuId(null);
+                            }
+                          }}
+                          className={styles.input}
+                        />
+                      </div>
                     ) : (
-                      <button
-                        onClick={() => handleLoadMenu(m.id)}
-                        onDoubleClick={() => {
-                          setEditingMenuId(m.id);
-                          setEditingMenuName(m.name);
-                        }}
-                        className={
-                          currentMenuId === m.id
-                            ? styles.activeItem
-                            : styles.item
-                        }
-                        title="Двойной клик — переименовать"
-                      >
-                        {m.name}
-                      </button>
+                      <div style={{ position: 'relative', width: '100%' }}>
+                        <button
+                          onClick={() => handleLoadMenu(m.id)}
+                          onDoubleClick={() => {
+                            setEditingMenuId(m.id);
+                            setEditingMenuName(m.name);
+                          }}
+                          className={
+                            currentMenuId === m.id
+                              ? styles.activeItem
+                              : styles.item
+                          }
+                          title="Двойной клик — переименовать"
+                          style={{ width: '100%' }}
+                        >
+                          {m.name}
+                        </button>
+                        {currentMenuId === m.id && editingMenuId !== m.id && (
+                          <button
+                            onClick={() => handleDeleteMenu(m.id)}
+                            className={styles.deleteButton}
+                            title="Удалить меню"
+                            style={{ position: 'absolute', right: 6, top: '50%', transform: 'translateY(-50%)', zIndex: 2 }}
+                          >
+                            ×
+                          </button>
+                        )}
+                      </div>
                     )}
-                    <button
-                      onClick={() => handleDeleteMenu(m.id)}
-                      className={styles.deleteButton}
-                      title="Удалить меню"
-                    >
-                      ×
-                    </button>
                   </li>
                 ))}
               </ul>
