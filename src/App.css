@@ -1,12 +1,12 @@
 /* Material Design palette */
 :root {
-  --md-primary: #eebbc3;
-  --md-primary-light: #f7cad0;
-  --md-accent: #232946;
+  --md-primary: #1976d2;
+  --md-primary-light: #e3f2fd;
+  --md-accent: #222831;
   --md-bg: #f5f6fa;
   --md-surface: #fff;
-  --md-error: #ffcdd2;
-  --md-error-text: #b71c1c;
+  --md-error: #e53935;
+  --md-error-text: #fff;
   --md-warning: #fff9c4;
   --md-radius: 12px;
   --md-shadow: 0 4px 24px #0002, 0 1.5px 4px #0001;
@@ -19,6 +19,7 @@ body,
   margin: 0;
   padding: 0;
   background: var(--md-bg);
+  color: var(--md-accent);
   width: 100vw;
 }
 
@@ -39,6 +40,21 @@ textarea {
 
 button {
   cursor: pointer;
+  border-radius: var(--md-radius);
+  border: none;
+  background: var(--md-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 2px 8px #1976d233;
+  padding: 0 24px;
+  height: 44px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--md-primary-light);
+  color: var(--md-primary);
 }
 
 input,
@@ -56,22 +72,6 @@ input:focus,
 textarea:focus,
 select:focus {
   border: 1.5px solid var(--md-primary);
-}
-
-button {
-  border-radius: var(--md-radius);
-  border: none;
-  background: var(--md-primary);
-  color: var(--md-accent);
-  font-weight: 600;
-  font-size: 16px;
-  box-shadow: 0 2px 8px #eebbc355;
-  padding: 0 24px;
-  height: 44px;
-}
-
-button:hover {
-  background: var(--md-primary-light);
 }
 
 ul {

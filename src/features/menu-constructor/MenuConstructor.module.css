@@ -1,6 +1,19 @@
+:root {
+  --color-bg: #f5f6fa;
+  --color-surface: #fff;
+  --color-text: #222831;
+  --color-accent: #1976d2;
+  --color-accent-hover: #e3f2fd;
+  --color-button: #2196f3;
+  --color-button-hover: #e3f2fd;
+  --color-border: #e0e0e0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+}
+
 .container {
   height: 100vh;
-  background: #f5f6fa;
+  background: var(--color-bg);
 }
 
 .nav {
@@ -132,7 +145,7 @@
 }
 
 .deleteButton {
-  color: #e63946;
+  color: var(--color-error);
   background: none;
   border: none;
   cursor: pointer;
@@ -273,7 +286,7 @@
 
 .exportPreviewCopyIconBtn:hover {
   background: #f7cad0;
-  color: #e63946;
+  color: var(--color-error);
 }
 
 .exportPreviewCopyIcon {
@@ -295,12 +308,12 @@
 }
 
 .templateIf {
-  color: #e63946;
+  color: var(--color-error);
   font-weight: 700;
 }
 
 .templateEndIf {
-  color: #e63946;
+  color: var(--color-error);
   font-weight: 700;
 }
 
@@ -309,4 +322,44 @@
   background: #eebbc355;
   border-radius: 3px;
   padding: 0 2px;
+}
+
+.button, .addButton, .exportButton, .importCardBtn, .filterResetBtn {
+  background: var(--color-button);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.button:hover, .addButton:hover, .exportButton:hover, .importCardBtn:hover, .filterResetBtn:hover {
+  background: var(--color-button-hover);
+  color: var(--color-accent);
+}
+.activeButton {
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.menuListContent, .editor, .import, .export {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.item, .activeItem {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent-hover);
+}
+.activeItem {
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.deleteButton {
+  color: var(--color-error);
+}
+.pageHeader {
+  color: var(--color-accent);
 }

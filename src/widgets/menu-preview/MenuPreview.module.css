@@ -1,3 +1,16 @@
+:root {
+  --color-bg: #f5f6fa;
+  --color-surface: #fff;
+  --color-text: #222831;
+  --color-accent: #1976d2;
+  --color-accent-hover: #e3f2fd;
+  --color-button: #2196f3;
+  --color-button-hover: #e3f2fd;
+  --color-border: #e0e0e0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+}
+
 .container {
   margin-top: 24px;
 }
@@ -21,6 +34,11 @@
   transition: box-shadow 0.2s;
 }
 
+.menu, .container {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
 .menu :global(ul) {
   margin-left: 20px;
   background: transparent;
@@ -36,8 +54,14 @@
   gap: 8px;
   border-radius: 8px;
   padding: 6px 8px;
-  background: rgba(238, 187, 195, 0.07);
-  transition: background 0.2s;
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu :global(li):hover {
+  background: var(--color-button-hover);
+  color: var(--color-accent);
 }
 
 .image {
@@ -50,22 +74,22 @@
 
 .icon {
   margin-right: 4px;
-  color: #eebbc3;
+  color: var(--color-accent);
   font-size: 18px;
 }
 
 .link {
   margin-right: 4px;
-  color: #232946;
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
-  border-bottom: 1.5px solid #eebbc3;
+  border-bottom: 1.5px solid var(--color-accent-hover);
   transition: color 0.2s, border 0.2s;
 }
 
 .link.hovered {
-  color: #eebbc3;
-  border-bottom: 1.5px solid #232946;
+  color: var(--color-accent);
+  border-bottom: 1.5px solid var(--color-accent);
 }
 
 .text {

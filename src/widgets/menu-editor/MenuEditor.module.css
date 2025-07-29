@@ -1,3 +1,16 @@
+:root {
+  --color-bg: #f5f6fa;
+  --color-surface: #fff;
+  --color-text: #222831;
+  --color-accent: #1976d2;
+  --color-accent-hover: #e3f2fd;
+  --color-button: #2196f3;
+  --color-button-hover: #e3f2fd;
+  --color-border: #e0e0e0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+}
+
 .editorRow {
   display: flex;
   flex-direction: row;
@@ -66,8 +79,8 @@
   flex-shrink: 0;
 }
 .treeBtn:hover {
-  background: #eebbc3;
-  color: #232946;
+  background: var(--color-accent-hover);
+  color: var(--color-text);
   box-shadow: 0 2px 8px #eebbc355;
 }
 .treeBtn:last-child {
@@ -104,7 +117,7 @@
   flex-shrink: 0;
 }
 .treeArrow:hover {
-  color: #eebbc3;
+  color: var(--color-accent);
 }
 
 .treeItemDragging {
@@ -213,8 +226,8 @@
   margin-right: 8px;
 }
 .filterResetBtn {
-  background: #eebbc3;
-  color: #232946;
+  background: var(--color-button);
+  color: #fff;
   border: none;
   border-radius: 6px;
   padding: 6px 16px;
@@ -222,10 +235,11 @@
   font-size: 14px;
   cursor: pointer;
   margin-left: 8px;
-  transition: background 0.18s;
+  transition: background 0.18s, color 0.18s;
 }
 .filterResetBtn:hover {
-  background: #f7cad0;
+  background: var(--color-button-hover);
+  color: var(--color-accent);
 }
 .filterCheckboxes {
   display: flex;
@@ -247,16 +261,16 @@
   transition: color 0.18s;
 }
 .filterToggle:hover {
-  color: #eebbc3;
+  color: var(--color-accent);
 }
 
 .treeItemError {
-  color: #e63946 !important;
+  color: var(--color-error) !important;
   font-weight: 700;
   position: relative;
 }
 .treeItemErrorIcon {
-  color: #e63946;
+  color: var(--color-error);
   margin-left: 4px;
   font-size: 16px;
   vertical-align: middle;
@@ -267,8 +281,8 @@
   left: 24px;
   top: 100%;
   background: #fff0f0;
-  color: #e63946;
-  border: 1px solid #e63946;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 13px;
@@ -321,7 +335,7 @@
 }
 .bulkPanelIconBtn:hover {
   background: #f7cad0;
-  color: #e63946;
+  color: var(--color-error);
 }
 .bulkPanelIcon {
   pointer-events: none;
@@ -355,7 +369,7 @@
 }
 .treeEyeBtn:hover {
   background: #f7cad0;
-  color: #e63946;
+  color: var(--color-error);
 }
 .treeEyeBtnHidden {
   color: #aaa;
@@ -364,4 +378,35 @@
 .treeItemInvisible {
   opacity: 0.45;
   filter: grayscale(0.5);
+}
+
+.treeBtn, .bulkPanelIconBtn {
+  background: var(--color-button);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.treeBtn:hover, .bulkPanelIconBtn:hover {
+  background: var(--color-button-hover);
+  color: var(--color-accent);
+}
+.treeItemSelected, .treeItemSelectedMulti {
+  background: var(--color-accent-hover) !important;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.treeItem:hover:not(.treeItemSelected) {
+  background: var(--color-button-hover);
+  color: var(--color-accent);
+}
+.form, .tree, .filterPanel, .bulkPanel {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.treeItemError, .treeItemErrorIcon {
+  color: var(--color-error) !important;
 }

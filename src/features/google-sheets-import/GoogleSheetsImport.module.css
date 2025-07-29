@@ -1,6 +1,19 @@
+:root {
+  --color-bg: #f5f6fa;
+  --color-surface: #fff;
+  --color-text: #222831;
+  --color-accent: #1976d2;
+  --color-accent-hover: #e3f2fd;
+  --color-button: #2196f3;
+  --color-button-hover: #e3f2fd;
+  --color-border: #e0e0e0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+}
+
 .container {
   margin-bottom: 24px;
-  background: var(--md-surface);
+  background: var(--color-surface);
   border-radius: 12px;
   box-shadow: var(--md-shadow);
   padding: 24px;
@@ -69,8 +82,8 @@
 }
 
 .errorContainer {
-  background: var(--md-error);
-  color: var(--md-error-text);
+  background: var(--color-error);
+  color: #fff;
   border-radius: 8px;
   padding: 10px 16px;
   margin-bottom: 8px;
@@ -123,22 +136,31 @@
   color: #232946;
 }
 
-.importFileBtn {
-  min-width: 180px;
-  height: 44px;
-  background: #eebbc3;
-  color: #232946;
+.importFileBtn, .importCardBtn {
+  background: var(--color-button);
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  margin-left: 8px;
-  transition: background 0.18s, box-shadow 0.18s;
-  box-shadow: 0 2px 8px #eebbc355;
+  transition: background 0.2s, color 0.2s;
 }
-.importFileBtn:hover {
-  background: #f7cad0;
+.importFileBtn:hover, .importCardBtn:hover {
+  background: var(--color-button-hover);
+  color: var(--color-accent);
+}
+.importCard, .container {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.errorContainer {
+  background: var(--color-error);
+  color: #fff;
+}
+.warningContainer {
+  background: var(--color-accent-hover);
+  color: var(--color-accent);
 }
 
 .dropZone {
@@ -155,8 +177,8 @@
 }
 .dropZoneActive {
   background: #fff0f5;
-  border-color: #e63946;
-  color: #e63946;
+  border-color: var(--color-error);
+  color: var(--color-error);
 }
 
 .importGrid {
@@ -222,8 +244,8 @@
   width: 100%;
   min-width: 160px;
   height: 44px;
-  background: #eebbc3;
-  color: #232946;
+  background: var(--color-button);
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -235,7 +257,7 @@
   display: block;
 }
 .importCardBtn:hover {
-  background: #f7cad0;
+  background: var(--color-button-hover);
 }
 .importCard input[type="text"] {
   width: 100%;

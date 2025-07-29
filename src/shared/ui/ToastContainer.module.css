@@ -1,3 +1,16 @@
+:root {
+  --color-bg: #f5f6fa;
+  --color-surface: #fff;
+  --color-text: #222831;
+  --color-accent: #1976d2;
+  --color-accent-hover: #e3f2fd;
+  --color-button: #2196f3;
+  --color-button-hover: #e3f2fd;
+  --color-border: #e0e0e0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+}
+
 .toastContainer {
   position: fixed;
   right: 32px;
@@ -7,8 +20,11 @@
   flex-direction: column-reverse;
   align-items: flex-end;
   pointer-events: none;
+  background: transparent;
 }
 
 .toastItem {
   pointer-events: auto;
+  background: var(--color-surface);
+  color: var(--color-text);
 }
